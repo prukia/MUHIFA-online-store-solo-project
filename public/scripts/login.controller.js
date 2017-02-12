@@ -1,5 +1,5 @@
-angular.module('muhifaApp').controller('LoginController', function ($http, $location){
-console.log('LoginController is loaded');
+angular.module('muhifaApp').controller('LoginController', LoginController);
+
 
 //function for users to log in
 function LoginController($http, $location) {
@@ -19,5 +19,3 @@ function LoginController($http, $location) {
     });
   };
 }
-
-});
