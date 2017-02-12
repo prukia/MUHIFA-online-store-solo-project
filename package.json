@@ -1,0 +1,38 @@
+{
+  "name": "solo-project",
+  "version": "1.0.0",
+  "description": "solo-project for Prime Academy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prukia/MUHIFA-online-store-solo-project.git"
+  },
+  "keywords": [
+    "SQL",
+    "Express",
+    "Angular",
+    "Node",
+    "Bootstrap",
+    "Paypal",
+    "API"
+  ],
+  "author": "R.Sheikh-Mohamed (rukia.sm.23@gmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prukia/MUHIFA-online-store-solo-project/issues"
+  },
+  "homepage": "https://github.com/prukia/MUHIFA-online-store-solo-project#readme",
+  "dependencies": {
+    "angular": "^1.6.2",
+    "bcrypt": "^1.0.2",
+    "body-parser": "^1.16.1",
+    "bootstrap": "^3.3.7",
+    "express": "^4.14.1",
+    "express-session": "^1.15.1",
+    "passport": "^0.3.2",
+    "pg": "^6.1.2"
+  }
+}
