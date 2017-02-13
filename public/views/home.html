@@ -1,19 +1,37 @@
-<h1>Home</h1>
+<h2>Home</h2>
 
-<a href="/account">Account</a>
+<a href="/account"><button class="btn btn-primary" type="button" name="account">Account</button></a>
 <button ng-click = "home.logout()" class="btn btn-danger" type="button" name="button">Log Out</button>
-
+<br />
+<a href="/cart">Cart (0)</a>
 <!-- On the top left will be links to social media accounts with
 their corresponding icons -->
 
 <!-- On the top right will be a drop down search button, account tab, and cart info
 with current cart qty -->
 <br />
+
+<label for="scarves">Scarves:</label>
+<select id="scarve-options" name="id" type="text"></select>
 <a href="/scarves">Scarves</a>
 <a href="/scarves">Jewelry</a>
 <a href="/scarves">Wraps</a>
+<br />
 
 <!-- Middle will be a slide show of products -->
+<div id="productImages">
+  <img ng-src="images/ombre.maroon.teal.navy.png" alt="Ombre set of 3" />
+  <img ng-src="images/pink.jersey.png" alt="Pink Jersey" />
+  <button ng-click="cart.add()" class="btn btn-success" type="button" name="add">Add to Cart</button>
+  <img ng-src="images/embroidered.png" alt="All embroidered" />
+  <img ng-src="images/sal.png" alt="Viscoe Turbans" />
+  <img ng-src="images/viscoe1.jpg" alt="Viscoe 1 set" />
+
+</div>
+
+
+
+
 
 
 <footer>

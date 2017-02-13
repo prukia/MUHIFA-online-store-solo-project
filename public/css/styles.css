@@ -1,0 +1,11 @@
+img{
+	height: 250px;
+	width: 250px;
+}
+h1{
+	font-family: 'Cinzel', serif;
+	text-align: center;
+	color: purple;
+	font-size: 80px;
+	text-transform:full-width;
+}
