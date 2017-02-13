@@ -9,6 +9,13 @@ angular.module('muhifaApp').config(function($routeProvider, $locationProvider) {
     templateUrl: 'views/register.html',
     controller: 'RegisterController as register'
 
+  }).when('/profile', {
+    templateUrl: 'views/profile.html',
+    controller: 'ProfileController as profile'
+
+  }).when('/cart',{
+    templateUrl: 'views/cart.html',
+    controller: 'CartController as cart'
   }).otherwise({
     templateUrl: 'views/home.html',
     controller: 'HomeController as home'

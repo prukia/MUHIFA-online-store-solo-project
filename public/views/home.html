@@ -1,6 +1,7 @@
 <h2>Home</h2>
 <div id="rightLinks">
   <a href="/login"><button class="btn btn-primary" type="button" name="account">Account</button></a>
+  <a href="/profile"><button class="btn btn-info" type="button" name="account">Profile</button></a>
   <button ng-click = "home.logout()" class="btn btn-danger" type="button" name="button">Log Out</button>
   <br />
   <a href="/cart">Cart (0)</a>
@@ -26,10 +27,10 @@ with current cart qty -->
 <div id="productImages">
   <img ng-src="images/ombre.maroon.teal.navy.png" alt="Ombre set of 3" />
   <img ng-src="images/pink.jersey.png" alt="Pink Jersey" />
-  <button ng-click="cart.add()" class="btn btn-success" type="button" name="add">Add to Cart</button>
   <img ng-src="images/embroidered.png" alt="All embroidered" />
   <img ng-src="images/sal.png" alt="Viscoe Turbans" />
   <img ng-src="images/viscoe1.jpg" alt="Viscoe 1 set" />
+  <button ng-click="cart.add()" class="btn btn-success" type="button" name="add">Add to Cart</button>
 
 </div>
 
