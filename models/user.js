@@ -42,11 +42,17 @@ exports.findAndComparePassword = function (username, password){
   });
 
 };
-exports.create = function (username, password)  {
+exports.create = function (username, password, first_name, last_name, street, city, state, zip)  {
   return bcrypt.hash(password, SALT_ROUNDS).then(function(hash){
-    return query('INSERT INTO users (username, password) VALUES ($1, $2) RETURNING *' ,[
+    return query('INSERT INTO users (username, password, first_name, last_name, street, city, state, zip) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *' ,[
       username,
-      hash
+      hash,
+      first_name,
+      last_name,
+      street,
+      city,
+      state,
+      zip
     ]).then(function (users){
       return users[0];
     });
@@ -60,9 +66,14 @@ exports.create = function (username, password)  {
 //   console.log('Created a test user');
 // });
 
-exports.findAndComparePassword('test', '1234').then(function(match){
-  console.log('passwords match', match);
-});
+// //testing new register fields.
+// exports.create('test1', '1234', 'user', 'hello', '1401 N Ave', 'Mpls', 'MN', 55431).then(function (){
+//   console.log('Created a test user');
+// });
+
+// exports.findAndComparePassword('test', '1234').then(function(match){
+//   console.log('passwords match', match);
+// });
 
 
 function query(sqlString, data){

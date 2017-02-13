@@ -1,21 +1,25 @@
 <h2>Home</h2>
+<div id="rightLinks">
+  <a href="/login"><button class="btn btn-primary" type="button" name="account">Account</button></a>
+  <button ng-click = "home.logout()" class="btn btn-danger" type="button" name="button">Log Out</button>
+  <br />
+  <a href="/cart">Cart (0)</a>
+</div>
 
-<a href="/account"><button class="btn btn-primary" type="button" name="account">Account</button></a>
-<button ng-click = "home.logout()" class="btn btn-danger" type="button" name="button">Log Out</button>
-<br />
-<a href="/cart">Cart (0)</a>
 <!-- On the top left will be links to social media accounts with
 their corresponding icons -->
 
 <!-- On the top right will be a drop down search button, account tab, and cart info
 with current cart qty -->
 <br />
+<div id="products">
+  <label for="scarves">Scarves:</label>
+  <select id="scarve-options" name="id" type="text"></select>
+  <a href="/scarves">Scarves</a>
+  <a href="/scarves">Jewelry</a>
+  <a href="/scarves">Wraps</a>
+</div>
 
-<label for="scarves">Scarves:</label>
-<select id="scarve-options" name="id" type="text"></select>
-<a href="/scarves">Scarves</a>
-<a href="/scarves">Jewelry</a>
-<a href="/scarves">Wraps</a>
 <br />
 
 <!-- Middle will be a slide show of products -->
@@ -35,18 +39,22 @@ with current cart qty -->
 
 
 <footer>
+<div id="customerService">
+  <h4><a href="/customerService">Customer Service</a></h4>
+  <ul>
+    <a href="/contact"><li>Contact Us</li></a>
+    <a href="/shipping"><li>Shipping Info</li></a>
+    <a href="/returns"><li>Returns</li></a>
+  </ul>
+</div>
+<div id="aboutUs">
+  <h4><a href="/aboutUs">About Us</a></h4>
+  <ul>
+    <a href="/about"><li>About Muhifa</li><a>
+    <a href="/faq"><li>FAQs</li></a>
+  </ul>
+</div>
 
-<h4><a href="/customerService">Customer Service</a></h4>
-<ul>
-  <a href="/contact"><li>Contact Us</li></a>
-  <a href="/shipping"><li>Shipping Info</li></a>
-  <a href="/returns"><li>Returns</li></a>
-</ul>
-<h4><a href="/aboutUs">About Us</a></h4>
-<ul>
-  <a href="/about"><li>About Muhifa</li><a>
-  <a href="/faq"><li>FAQs</li></a>
-</ul>
 <h4>Stay Connected</h4>
 <!-- links to social media accts with their corresponding icons -->
 </footer>
