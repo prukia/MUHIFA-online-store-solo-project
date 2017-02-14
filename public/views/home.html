@@ -1,27 +1,83 @@
-<h2>Home</h2>
-<div id="rightLinks">
-  <a href="/login"><button class="btn btn-primary" type="button" name="account">Account</button></a>
-  <a href="/profile"><button class="btn btn-info" type="button" name="account">Profile</button></a>
-  <button ng-click = "home.logout()" class="btn btn-danger" type="button" name="button">Log Out</button>
-  <br />
-  <a href="/cart">Cart (0)</a>
-</div>
+<!-- <h2>Home</h2> -->
+
 
 <!-- On the top left will be links to social media accounts with
 their corresponding icons -->
 
 <!-- On the top right will be a drop down search button, account tab, and cart info
 with current cart qty -->
-<br />
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">MUHIFA</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/home">Home</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Scarves
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Viscoe</a></li>
+          <li><a href="#">Jersey</a></li>
+          <li><a href="#">Ombre</a></li>
+          <li><a href="#">Embroidered</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Jewelry
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Chockers</a></li>
+          <li><a href="#">Red Print</a></li>
+          <li><a href="#">Green Print</a></li>
+          <li><a href="#">Purple Print</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Wraps
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Hindi Dhaqan</a></li>
+          <li><a href="#">Red Print</a></li>
+          <li><a href="#">Green Print</a></li>
+          <li><a href="#">Purple Print</a></li>
+        </ul>
+      </li>
+      <form class="navbar-form navbar-left">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+    </form>
+      <div id="rightLinks">
+        <a href="/login"><button class="btn btn-primary" type="button" name="account">Account</button></a>
+        <a href="/profile"><button class="btn btn-info" type="button" name="account">Profile</button></a>
+        <button ng-click = "home.logout()" class="btn btn-danger" type="button" name="button">Log Out</button>
+        <a href="/cart"><button class="btn btn-success" type="button" name="cart">Cart (0)</button></a>
+        <!-- <div id="viewCart">
+          <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
+          <input type="hidden" name="cmd" value="_cart">
+          <input type="hidden" name="business" value="FJCLXNEFDKDBJ">
+          <input type="hidden" name="display" value="1">
+          <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_viewcart_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+          <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+          </form>
+        </div> -->
+      </div>
+    </ul>
+  </div>
+</nav>
+
+<!--
 <div id="products">
   <label for="scarves">Scarves:</label>
   <select id="scarve-options" name="id" type="text"></select>
   <a href="/scarves">Scarves</a>
   <a href="/scarves">Jewelry</a>
   <a href="/scarves">Wraps</a>
-</div>
+</div> -->
 
-<br />
+
 
 <!-- Middle will be a slide show of products -->
 <div id="productImages">
@@ -33,6 +89,23 @@ with current cart qty -->
   <button ng-click="cart.add()" class="btn btn-success" type="button" name="add">Add to Cart</button>
 
 </div>
+
+<!--
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="LZCFY7UX9J2JW">
+<img ng-src="images/ombre.navy.png" alt="Navy/Cream Ombre" />
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form> -->
+ <!-- action="https://www.paypal.com/cgi-bin/webscr"  -->
+<img ng-src="images/ombre.navy.png" alt="Navy/Cream Ombre" />
+<form target="paypal" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="ND5PER83TQLCG">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
 
 
 

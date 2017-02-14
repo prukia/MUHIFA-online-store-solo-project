@@ -9,3 +9,9 @@ h1{
 	font-size: 80px;
 	text-transform:full-width;
 }
+#rightLinks{
+	float: right;
+}
+form{
+	display:inline-table;
+}
