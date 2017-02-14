@@ -15,4 +15,16 @@ this.checkLoginStatus = function (){
       }
     });
   }
+
+this.getProfileInfo = function (){
+  console.log('Getting user profile');
+  return $http.get('/person').then(function (res){
+    console.log('got response from the DB', res);
+    return res.data;
+  }).catch(function(err){
+    console.log("error getting info from DB", err);
+  });
+}
+
+
 });

@@ -10,6 +10,7 @@ var passport = require('passport');
 var connection = require('./db/connection');
 var login = require('./routes/login');
 var register = require('./routes/register');
+var profile = require('./routes/profile');
 
 //where passport auth will be set up
 require('./auth/setup');
@@ -42,6 +43,7 @@ app.use(passport.session());
 //no auth needed where route folders will go
 app.use('/login', login);
 app.use('/register', register);
+app.use('/person', profile);
 
 app.get('/loginStatus', function (req,res){
   res.send(req.isAuthenticated());
