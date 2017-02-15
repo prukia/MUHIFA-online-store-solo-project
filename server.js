@@ -13,6 +13,7 @@ var login = require('./routes/login');
 var register = require('./routes/register');
 var profile = require('./routes/profile');
 var scarves = require('./routes/scarves');
+var cart = require('./routes/cart');
 
 
 //where passport auth will be set up
@@ -48,6 +49,7 @@ app.use('/login', login);
 app.use('/register', register);
 app.use('/person', profile);
 app.use('/scarf', scarves);
+app.use('/carts', cart);
 
 app.get('/loginStatus', function (req,res){
   res.send(req.isAuthenticated());

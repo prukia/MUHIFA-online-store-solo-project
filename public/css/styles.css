@@ -18,12 +18,13 @@ form{
 #scarves{
 
 }
-#blush, #blacke, #olivev, #greene, #scarf{
+#scarf{
 	font-family: 'Lobster', cursive;
 	text-align: center;
 	border: 3px solid white;
 	display: inline-block;
 	margin-left: 10px;
+	margin-top: 10px;
 	font-size: 24px;
 }
 .blush{
