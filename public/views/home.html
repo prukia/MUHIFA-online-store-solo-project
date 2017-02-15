@@ -15,7 +15,7 @@ with current cart qty -->
     <ul class="nav navbar-nav">
       <li class="active"><a href="/home">Home</a></li>
       <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Scarves
+        <a class="dropdown-toggle" data-toggle="dropdown" href="/scarves"> Scarves
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="#">Viscoe</a></li>
@@ -54,24 +54,23 @@ with current cart qty -->
         <a href="/profile"><button class="btn btn-info" type="button" name="account">Profile</button></a>
         <button ng-click = "home.logout()" class="btn btn-danger" type="button" name="button">Log Out</button>
         <a href="/cart"><button class="btn btn-success" type="button" name="cart">Cart (0)</button></a>
-        <!-- <div id="viewCart">
-          <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
-          <input type="hidden" name="cmd" value="_cart">
-          <input type="hidden" name="business" value="FJCLXNEFDKDBJ">
-          <input type="hidden" name="display" value="1">
-          <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_viewcart_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-          <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-          </form>
-        </div> -->
       </div>
     </ul>
   </div>
 </nav>
-
+<!-- <div id="viewCart">
+  <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
+  <input type="hidden" name="cmd" value="_cart">
+  <input type="hidden" name="business" value="FJCLXNEFDKDBJ">
+  <input type="hidden" name="display" value="1">
+  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_viewcart_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+  </form>
+</div> -->
 <!--
 <div id="products">
   <label for="scarves">Scarves:</label>
-  <select id="scarve-options" name="id" type="text"></select>
+  <select id="scarve-options"name="id" type="text"></select>
   <a href="/scarves">Scarves</a>
   <a href="/scarves">Jewelry</a>
   <a href="/scarves">Wraps</a>
