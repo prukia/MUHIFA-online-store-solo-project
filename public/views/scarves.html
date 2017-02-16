@@ -42,11 +42,12 @@
           <input type="text" class="form-control" placeholder="Search">
         </div>
       </form>
-        <div id="rightLinks">
+        <div id="rightLinks" ng-controller="CartController as cart">
           <a href="/login"><button class="btn btn-primary" type="button" name="account">Account</button></a>
           <a href="/profile"><button class="btn btn-info" type="button" name="account">Profile</button></a>
           <button ng-click = "home.logout()" class="btn btn-danger" type="button" name="button">Log Out</button>
-          <a href="/cart"><button class="btn btn-success" type="button" name="cart">Cart (0)</button></a>
+          <!-- Used for cart counter -->
+          <a href="/cart"><button class="btn btn-success" type="button" name="cart">Cart ({{cart.cartScarves.length}})</button></a>
         </div>
       </ul>
     </div>

@@ -30,3 +30,6 @@ form{
 .blush{
 
 }
+li{
+	list-style: none;
+}
