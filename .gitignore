@@ -1,4 +1,7 @@
 node_modules
 wireframes
+auth.js
+payment
+order
 *.log
 .DS_Store

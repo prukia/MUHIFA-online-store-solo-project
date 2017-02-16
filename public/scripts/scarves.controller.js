@@ -21,6 +21,7 @@ ctrl.postScarves = function (data){
   }).catch(function(err){
     console.log('error posting response from the carts', err);
   });
+  
 };
 
 });

@@ -2,6 +2,7 @@ angular.module('muhifaApp').controller('CartController', function ($http, $locat
 console.log('CartController is loaded');
 
 
+
 var ctrl = this;
 ctrl.getCartScarves = function() {
     $http.get('/carts').then(function(response) {
@@ -22,5 +23,7 @@ console.log('This product is deleted', response);
   });
   ctrl.getCartScarves();
 };
+// ctrl.total = cartScarves.price.sum();
+// console.log(ctrl.total);
 
 });
