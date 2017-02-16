@@ -33,3 +33,12 @@ form{
 li{
 	list-style: none;
 }
+#cartData{
+	text-align: center;
+	display: inline-block;
+}
+h2{
+	font-family: 'Lobster', cursive;
+	text-decoration: underline;
+	color: purple;
+}

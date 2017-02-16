@@ -13,5 +13,14 @@ ctrl.getCartScarves = function() {
  }; // end getCohorts function
 ctrl.getCartScarves();
 
+ctrl.deleteProduct = function(id){
+  console.log(id);
+  $http.delete('/carts/' + id).then(function(response){
+console.log('This product is deleted', response);
+  }).catch(function(err){
+    console.log('error deleting response from the cart', err);
+  });
+  ctrl.getCartScarves();
+};
 
 });

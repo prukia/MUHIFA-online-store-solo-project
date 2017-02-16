@@ -23,5 +23,27 @@ router.get("/", function(req, res) {
     }
   });
 });
+//delete product from cart
+router.delete('/:id', function(req, res){
+  pool.connect(function(err, client, done){
+    if (err) {
+      console.log('Error connecting to DB', err);
+      res.sendStatus(500);
+      done();
+    } else {
+      client.query('DELETE FROM cart WHERE id = $1',
+                   [req.params.id],
+                   function(err, result){
+                     done();
+                     if (err) {
+                       console.log('Error deleting product', err);
+                       res.sendStatus(500);
+                     } else {
+                       res.sendStatus(204);
+                     }
+                   });
+    }
+  });
+});
 
 module.exports = router;
