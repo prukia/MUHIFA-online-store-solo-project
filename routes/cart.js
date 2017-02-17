@@ -32,7 +32,7 @@ router.get("/test", function (req,res){
   };
 
   paypal.payment.create(create_payment_json, function (error, payment) {
-    console.log("hello", payment);
+    // console.log("hello", payment);
       if (error) {
           throw error;
       } else {
@@ -40,12 +40,9 @@ router.get("/test", function (req,res){
           console.log(payment);
       }
   });
-
-
-
-
-
 });
+
+
 
 router.get("/", function(req, res) {
 

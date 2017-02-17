@@ -20,7 +20,7 @@ var paypalConfig = require('./config/auth');
 
 //where passport auth will be set up
 require('./auth/setup');
-paypalConfig();
+// paypalConfig();
 
 
 connection.connect();
