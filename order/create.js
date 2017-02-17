@@ -1,5 +1,5 @@
 var paypal = require('paypal-rest-sdk');
-var paypalConfig = require('./config/auth');
+var paypalConfig = require('../config/auth');
 
 var create_payment_json = {
     "intent": "order",

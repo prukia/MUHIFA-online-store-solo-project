@@ -47,6 +47,7 @@ app.use(express.static('public'));
 app.use(passport.initialize());
 app.use(passport.session());
 
+
 //no auth needed where route folders will go
 app.use('/login', login);
 app.use('/register', register);

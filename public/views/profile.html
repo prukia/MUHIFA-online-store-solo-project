@@ -3,5 +3,9 @@
 <a href="/home">Home</a>
 
 <div ng-repeat="cust in profile.user">
+  <p>Hello: {{cust.first_name}}</p>
 <p>Username:  {{cust.username}}</p>
+<h4>Address: </h4>
+<p>{{cust.street}}</p>
+<p>{{cust.city}}, {{cust.state}} {{cust.zip}}</p>
 </div>
