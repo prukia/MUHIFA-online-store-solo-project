@@ -41,7 +41,7 @@
         <input type="text" class="form-control" placeholder="Search">
       </div>
     </form>
-      <div id="rightLinks" ng-controller="CartController as cart">
+      <div id="rightLinks">
         <a href="/login"><button class="btn btn-primary" type="button" name="account">Account</button></a>
         <a href="/profile"><button class="btn btn-info" type="button" name="account">Profile</button></a>
         <button ng-click = "home.logout()" class="btn btn-danger" type="button" name="button">Log Out</button>
@@ -73,6 +73,11 @@
     <li id="total">Total:</li>
   </ul>
   <button ng-click="" class="btn btn-success" type="button" name="delete">CHECKOUT</button>
+
+  <!-- <p ng-repeat="config in cart.paypalConfig">
+    {{paypalConfig}}
+
+  </p> -->
 
 
 </div>

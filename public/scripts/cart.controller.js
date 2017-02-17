@@ -14,6 +14,16 @@ ctrl.getCartScarves = function() {
  }; // end getCohorts function
 ctrl.getCartScarves();
 
+// ctrl.paypalData = function (){
+//   $http.get('/carts/test').then(function(response){
+//     ctrl.paypalConfig = response.data;
+//     console.log('this is the data from paypal', response.data);
+//   }).catch(function(err){
+//     console.log('error getting response from API', err);
+//   });
+// };
+// ctrl.paypalData();
+
 ctrl.deleteProduct = function(id){
   console.log(id);
   $http.delete('/carts/' + id).then(function(response){
