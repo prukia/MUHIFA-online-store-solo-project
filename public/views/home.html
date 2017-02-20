@@ -9,9 +9,26 @@ with current cart qty -->
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
-    <div class="navbar-header">
+    <!-- <div class="navbar-header">
       <a class="navbar-brand" href="#">MUHIFA</a>
-    </div>
+    </div> -->
+    <ul class="social-icons">
+    <li class="icon icon--facebook">
+      <a href="https://www.facebook.com/muhifa.scarves1?fref=ts">
+        <span class="icon__name">Facebook</span>
+      </a>
+    </li>
+    <li class="icon icon--twitter">
+      <a href="#">
+        <span class="icon__name">Twitter</span>
+      </a>
+    </li>
+    <li class="icon icon--instagram">
+      <a href="https://www.instagram.com/muhifa/?hl=en">
+        <span class="icon__name">Instagram</span>
+      </a>
+    </li>
+    </ul>
     <ul class="nav navbar-nav">
       <li class="active"><a href="/home">Home</a></li>
       <li class="dropdown">
@@ -44,12 +61,14 @@ with current cart qty -->
           <li><a href="#">Purple Print</a></li>
         </ul>
       </li>
-      <form class="navbar-form navbar-left">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search">
-      </div>
+      <!-- <form class="navbar-form navbar-left">
+      <div class="input-group"> -->
+
+        <!-- <input type="text" class="form-control" placeholder="Search"> -->
+      <!-- </div> -->
     </form>
       <div id="rightLinks" ng-controller="CartController as cart">
+        <button class="btn btn-info" type="button" name="cart">  <span class="glyphicon glyphicon-search"></span></button>
         <a href="/login"><button class="btn btn-primary" type="button" name="account">Account</button></a>
         <a href="/profile"><button class="btn btn-info" type="button" name="account">Profile</button></a>
         <button ng-click = "home.logout()" class="btn btn-danger" type="button" name="button">Log Out</button>
@@ -58,6 +77,9 @@ with current cart qty -->
     </ul>
   </div>
 </nav>
+
+
+
 <!-- <div id="viewCart">
   <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
   <input type="hidden" name="cmd" value="_cart">
@@ -135,4 +157,21 @@ with current cart qty -->
 
 <h4>Stay Connected</h4>
 <!-- links to social media accts with their corresponding icons -->
+<ul class="social-icons">
+<li class="icon icon--facebook">
+  <a href="https://www.facebook.com/muhifa.scarves1?fref=ts">
+    <span class="icon__name">Facebook</span>
+  </a>
+</li>
+<li class="icon icon--twitter">
+  <a href="#">
+    <span class="icon__name">Twitter</span>
+  </a>
+</li>
+<li class="icon icon--instagram">
+  <a href="https://www.instagram.com/muhifa/?hl=en">
+    <span class="icon__name">Instagram</span>
+  </a>
+</li>
+</ul>
 </footer>

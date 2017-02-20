@@ -74,6 +74,20 @@
   </ul>
   <button ng-click="" class="btn btn-success" type="button" name="delete">CHECKOUT</button>
 
+
+  <form action="/your-server-side-code" method="POST">
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="pk_test_xvujit22lAuFFZRdR6p6oMpP"
+    data-amount="999"
+    data-name="Demo Site"
+    data-description="Widget"
+    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+    data-locale="auto"
+    data-zip-code="true">
+  </script>
+</form>
+
   <!-- <p ng-repeat="config in cart.paypalConfig">
     {{paypalConfig}}
 
