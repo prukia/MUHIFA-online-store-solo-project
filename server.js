@@ -15,12 +15,12 @@ var register = require('./routes/register');
 var profile = require('./routes/profile');
 var scarves = require('./routes/scarves');
 var cart = require('./routes/cart');
-var paypalConfig = require('./config/auth');
+
 
 
 //where passport auth will be set up
 require('./auth/setup');
-// paypalConfig();
+
 
 
 connection.connect();

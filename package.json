@@ -16,7 +16,6 @@
     "Angular",
     "Node",
     "Bootstrap",
-    "Paypal",
     "API"
   ],
   "author": "R.Sheikh-Mohamed (rukia.sm.23@gmail.com)",
@@ -34,7 +33,6 @@
     "express-session": "^1.15.1",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
-    "paypal-rest-sdk": "^1.7.1",
     "pg": "^6.1.2"
   }
 }
