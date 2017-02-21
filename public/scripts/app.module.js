@@ -1,1 +1,1 @@
-angular.module('muhifaApp', ['ngRoute']);
+angular.module('muhifaApp', ['ngRoute', 'stripe.checkout']);

@@ -7,17 +7,44 @@
     <li>Name: {{item.name}} </li>
     <li>Color: {{item.color}}</li>
     <li>Description: {{item.type}} {{item.description}} {{item.material}}</li>
+    <label>QTY</label>
+  <button class="btn btn-info" type="button" name="cart"> <span class="glyphicon glyphicon-minus"></span></button>  <input type="number" value="{{item.qty}}" />
+  <button class="btn btn-info" type="button" name="cart"> <span class="glyphicon glyphicon-plus"></span></button>
     <li>{{item.price}}</li>
     <button ng-click="cart.deleteProduct(item.id)" class="btn btn-danger" type="button" name="delete">Remove</button>
   </ul>
 </div>
 
-<!-- <div id="orderSummary">
+<div id="orderSummary">
   <h4>Order Summary:</h4>
   <ul>
-    <li>Subtotal:{{cart.cartScarves.sum()}}</li>
-    <li>sales tex: </li>
+    <li>Subtotal:{{cart.subtotal | currency}}</li>
+    <li>sales tax: </li>
     <li>shipping: $4.99</li>
-    <li id="total">Total:</li>
+    <li id="total">Total:{{cart.total | currency}}</li>
   </ul>
-  <button ng-click="" class="btn btn-success" type="button" name="delete">CHECKOUT</button> -->
+<!-- ng-click="cart.doCheckout(token)" -->
+  <button  stripe-checkout="cart.doCheckout"
+          data-key="pk_test_xvujit22lAuFFZRdR6p6oMpP"
+          data-image="https://scontent-ord1-1.xx.fbcdn.net/v/t1.0-9/11988597_144456269230699_4346582727606847255_n.jpg?oh=7bf8ec6cac786e58e4e04c142313ccef&oe=592A4E55"
+          data-name="muhifa.com"
+          data-description="Send Lots of love"
+          data-amount="{{cart.total | currency}}">
+    Checkout
+  </button>
+
+
+
+  <!-- <form action="/charge" method="POST">
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="pk_test_xvujit22lAuFFZRdR6p6oMpP"
+              data-image="https://scontent-ord1-1.xx.fbcdn.net/v/t1.0-9/11988597_144456269230699_4346582727606847255_n.jpg?oh=7bf8ec6cac786e58e4e04c142313ccef&oe=592A4E55"
+              data-name="muhifa.com"
+              data-description="Send lots of love"
+              data-amount="600"
+              data-billing-address="true"
+              data-label="Checkout"
+      >
+      </script>
+  </form> -->
+  <!-- <button ng-click="" class="btn btn-success" type="button" name="delete">CHECKOUT</button> -->

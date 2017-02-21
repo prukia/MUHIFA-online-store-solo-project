@@ -32,9 +32,9 @@ router.post('/', function(req, res){
       done();
     } else {
 
-      client.query('INSERT INTO cart (name, color, description, type, material, image_url, price) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *;',
+      client.query('INSERT INTO cart (name, color, description, type, material, image_url, price, qty) VALUES ($1, $2, $3, $4, $5, $6, $7,$8) RETURNING *;',
       //has to be the same as object names inside of gif-service
-      [req.body.name, req.body.color, req.body.description, req.body.type, req.body.material, req.body.image_url, req.body.price],
+      [req.body.name, req.body.color, req.body.description, req.body.type, req.body.material, req.body.image_url, req.body.price, req.body.qty],
       function(err, result){
         //waiting for database to get information back
         done();

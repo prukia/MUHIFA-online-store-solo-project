@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="vendors/bootstrap.min.css" media="screen" title="no title">
   <script src="vendors/angular.min.js" charset="utf-8"></script>
   <script src="vendors/angular-route.min.js" charset="utf-8"></script>
+  <script src="vendors/angular-stripe-checkout.min.js" charset="utf-8"></script>
 
   <script src="scripts/app.module.js" charset="utf-8"></script>
   <script src="scripts/login.controller.js" charset="utf-8"></script>
@@ -65,18 +66,9 @@
         return false;
     });
 </script> -->
-<form action="/charge" method="POST">
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-            data-key="pk_test_xvujit22lAuFFZRdR6p6oMpP"
-            data-image="https://scontent-ord1-1.xx.fbcdn.net/v/t1.0-9/11988597_144456269230699_4346582727606847255_n.jpg?oh=7bf8ec6cac786e58e4e04c142313ccef&oe=592A4E55"
-            data-name="muhifa.com"
-            data-description="Send lots of love"
-            data-amount="6000"
-            data-billing-address="true"
-            data-label="Checkout"
-    >
-    </script>
-</form>
+
+
+
   <h1 id="shopName">MUHIFA</h1>
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
