@@ -18,6 +18,11 @@ form{
 #scarves{
 
 }
+#qty{
+	height: 50px;
+	width: 50px;
+  display: inline;
+}
 #scarf{
 	font-family: 'Lobster', cursive;
 	text-align: center;

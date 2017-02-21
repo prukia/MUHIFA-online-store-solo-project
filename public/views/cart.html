@@ -1,5 +1,3 @@
-
-
 <h2>Shopping Bag ({{cart.cartScarves.length}})</h2>
 <div id="cartData" ng-repeat="item in cart.cartScarves track by $index">
   <p><img ng-src="{{item.image_url}}" alt="" /></p>
@@ -7,10 +5,8 @@
     <li>Name: {{item.name}} </li>
     <li>Color: {{item.color}}</li>
     <li>Description: {{item.type}} {{item.description}} {{item.material}}</li>
-    <label>QTY</label>
-  <button class="btn btn-info" type="button" name="cart"> <span class="glyphicon glyphicon-minus"></span></button>  <input type="number" value="{{item.qty}}" />
-  <button class="btn btn-info" type="button" name="cart"> <span class="glyphicon glyphicon-plus"></span></button>
-    <li>{{item.price}}</li>
+    <li><label for="ex1">QTY:</label> <input id="qty"class="form-control" id="ex1" type="number" value="{{item.qty}}"></li>  
+    <li>{{item.price | currency}}</li>
     <button ng-click="cart.deleteProduct(item.id)" class="btn btn-danger" type="button" name="delete">Remove</button>
   </ul>
 </div>
@@ -24,14 +20,19 @@
     <li id="total">Total:{{cart.total | currency}}</li>
   </ul>
 <!-- ng-click="cart.doCheckout(token)" -->
-  <button  stripe-checkout="cart.doCheckout"
+  <button  class="btn btn-success" stripe-checkout="cart.doCheckout"
           data-key="pk_test_xvujit22lAuFFZRdR6p6oMpP"
           data-image="https://scontent-ord1-1.xx.fbcdn.net/v/t1.0-9/11988597_144456269230699_4346582727606847255_n.jpg?oh=7bf8ec6cac786e58e4e04c142313ccef&oe=592A4E55"
           data-name="muhifa.com"
           data-description="Send Lots of love"
-          data-amount="{{cart.total | currency}}">
+          data-amount="{{cart.total * 100 | currency}}">
     Checkout
   </button>
+
+
+  <!-- <label>QTY</label>
+<button class="btn btn-info" type="button" name="cart"> <span class="glyphicon glyphicon-minus"></span></button>  <input type="number" value="{{item.qty}}" />
+<button class="btn btn-info" type="button" name="cart"> <span class="glyphicon glyphicon-plus"></span></button> -->
 
 
 
@@ -47,4 +48,3 @@
       >
       </script>
   </form> -->
-  <!-- <button ng-click="" class="btn btn-success" type="button" name="delete">CHECKOUT</button> -->
