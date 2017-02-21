@@ -16,6 +16,9 @@
   <script src="scripts/cart.controller.js" charset="utf-8"></script>
   <script src="scripts/scarves.controller.js" charset="utf-8"></script>
   <script src="scripts/auth.service.js" charset="utf-8"></script>
+  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
+<!-- <script src="https://checkout.stripe.com/checkout.js"></script> -->
+
 
   <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
@@ -29,7 +32,123 @@
   <base href="/" />
 </head>
 <body>
+  <!-- <a id="pay" href="#">Dolla dolla bill y'all</a>
+
+<script>
+    // Define handler to be called when Stripe returns a card token
+    function onReceiveToken(token, args) {
+        // Submit token to server so it can charge the card
+        $.ajax({
+            url: '/charge',
+            type: 'POST',
+            data: {
+                stripeToken: token.id
+            }
+        });
+    }
+
+    // Configure Checkout
+    var checkout = StripeCheckout.configure({
+        key: 'pk_test_xvujit22lAuFFZRdR6p6oMpP',
+        token: onReceiveToken,
+
+        image: 'https://nairteashop.org/wp-content/uploads/avatar.png',
+        name: 'nairteashop.org',
+        description: 'Send lots of love',
+        amount: 1000,
+        billingAddress: 'true'
+    });
+
+    // Open Checkout when the link is clicked
+    $('#pay').on('click', function() {
+        checkout.open();
+        return false;
+    });
+</script> -->
+<form action="/charge" method="POST">
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="pk_test_xvujit22lAuFFZRdR6p6oMpP"
+            data-image="https://scontent-ord1-1.xx.fbcdn.net/v/t1.0-9/11988597_144456269230699_4346582727606847255_n.jpg?oh=7bf8ec6cac786e58e4e04c142313ccef&oe=592A4E55"
+            data-name="muhifa.com"
+            data-description="Send lots of love"
+            data-amount="6000"
+            data-billing-address="true"
+            data-label="Checkout"
+    >
+    </script>
+</form>
   <h1 id="shopName">MUHIFA</h1>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <!-- <div class="navbar-header">
+        <a class="navbar-brand" href="#">MUHIFA</a>
+      </div> -->
+      <ul class="social-icons">
+      <li class="icon icon--facebook">
+        <a href="https://www.facebook.com/muhifa.scarves1?fref=ts">
+          <span class="icon__name">Facebook</span>
+        </a>
+      </li>
+      <li class="icon icon--twitter">
+        <a href="#">
+          <span class="icon__name">Twitter</span>
+        </a>
+      </li>
+      <li class="icon icon--instagram">
+        <a href="https://www.instagram.com/muhifa/?hl=en">
+          <span class="icon__name">Instagram</span>
+        </a>
+      </li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/home">Home</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="/scarves"> Scarves
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Viscoe</a></li>
+            <li><a href="#">Jersey</a></li>
+            <li><a href="#">Ombre</a></li>
+            <li><a href="#">Embroidered</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Jewelry
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Chockers</a></li>
+            <li><a href="#">Red Print</a></li>
+            <li><a href="#">Green Print</a></li>
+            <li><a href="#">Purple Print</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Wraps
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Hindi Dhaqan</a></li>
+            <li><a href="#">Red Print</a></li>
+            <li><a href="#">Green Print</a></li>
+            <li><a href="#">Purple Print</a></li>
+          </ul>
+        </li>
+        <!-- <form class="navbar-form navbar-left">
+        <div class="input-group"> -->
+
+          <!-- <input type="text" class="form-control" placeholder="Search"> -->
+        <!-- </div> -->
+      </form>
+        <div id="rightLinks" ng-controller="CartController as cart">
+          <button class="btn btn-info" type="button" name="cart">  <span class="glyphicon glyphicon-search"></span></button>
+          <a href="/login"><button class="btn btn-primary" type="button" name="account">Account</button></a>
+          <a href="/profile"><button class="btn btn-info" type="button" name="account">Profile</button></a>
+          <button ng-click = "home.logout()" class="btn btn-danger" type="button" name="button">Log Out</button>
+          <a href="/cart"><button class="btn btn-success" type="button" name="cart">Cart ({{cart.cartScarves.length}})</button></a>
+        </div>
+      </ul>
+    </div>
+  </nav>
+
   <ng-view></ng-view>
 </body>
 </html>

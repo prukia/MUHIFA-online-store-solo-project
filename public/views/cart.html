@@ -1,56 +1,4 @@
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">MUHIFA</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="/home">Home</a></li>
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="/scarves"> Scarves
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Viscoe</a></li>
-          <li><a href="#">Jersey</a></li>
-          <li><a href="#">Ombre</a></li>
-          <li><a href="#">Embroidered</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Jewelry
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Chockers</a></li>
-          <li><a href="#">Red Print</a></li>
-          <li><a href="#">Green Print</a></li>
-          <li><a href="#">Purple Print</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Wraps
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Hindi Dhaqan</a></li>
-          <li><a href="#">Red Print</a></li>
-          <li><a href="#">Green Print</a></li>
-          <li><a href="#">Purple Print</a></li>
-        </ul>
-      </li>
-      <form class="navbar-form navbar-left">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search">
-      </div>
-    </form>
-      <div id="rightLinks">
-        <a href="/login"><button class="btn btn-primary" type="button" name="account">Account</button></a>
-        <a href="/profile"><button class="btn btn-info" type="button" name="account">Profile</button></a>
-        <button ng-click = "home.logout()" class="btn btn-danger" type="button" name="button">Log Out</button>
-        <!-- Used for cart counter -->
-        <a href="/cart"><button class="btn btn-success" type="button" name="cart">Cart ({{cart.cartScarves.length}})</button></a>
-      </div>
-    </ul>
-  </div>
-</nav>
 
 <h2>Shopping Bag ({{cart.cartScarves.length}})</h2>
 <div id="cartData" ng-repeat="item in cart.cartScarves track by $index">
@@ -64,7 +12,7 @@
   </ul>
 </div>
 
-<div id="orderSummary">
+<!-- <div id="orderSummary">
   <h4>Order Summary:</h4>
   <ul>
     <li>Subtotal:{{cart.cartScarves.sum()}}</li>
@@ -72,18 +20,4 @@
     <li>shipping: $4.99</li>
     <li id="total">Total:</li>
   </ul>
-  <button ng-click="" class="btn btn-success" type="button" name="delete">CHECKOUT</button>
-
-
-  <form action="/your-server-side-code" method="POST">
-  <script
-    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="pk_test_xvujit22lAuFFZRdR6p6oMpP"
-    data-amount="999"
-    data-name="Demo Site"
-    data-description="Widget"
-    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-    data-locale="auto"
-    data-zip-code="true">
-  </script>
-</form>
+  <button ng-click="" class="btn btn-success" type="button" name="delete">CHECKOUT</button> -->

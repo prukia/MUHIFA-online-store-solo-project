@@ -2,6 +2,11 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
 
+//stripe configure
+var keyPublishable = process.env.PUBLISHABLE_KEY;
+var keySecret = process.env.SECRET_KEY;
+var stripe = require("stripe")("sk_test_dOFWIEyJc2fkOc8XzHtKTadE");
+
 
 
 //creating cookies and underline session
@@ -15,6 +20,7 @@ var register = require('./routes/register');
 var profile = require('./routes/profile');
 var scarves = require('./routes/scarves');
 var cart = require('./routes/cart');
+var charge = require('./routes/charge');
 
 
 
@@ -54,7 +60,7 @@ app.use('/register', register);
 app.use('/person', profile);
 app.use('/scarf', scarves);
 app.use('/carts', cart);
-
+app.use('/charge', charge);
 app.get('/loginStatus', function (req,res){
   res.send(req.isAuthenticated());
 })
