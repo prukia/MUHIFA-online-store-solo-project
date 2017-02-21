@@ -5,7 +5,7 @@
     <li>Name: {{item.name}} </li>
     <li>Color: {{item.color}}</li>
     <li>Description: {{item.type}} {{item.description}} {{item.material}}</li>
-    <li><label for="ex1">QTY:</label> <input id="qty"class="form-control" id="ex1" type="number" value="{{item.qty}}"></li>  
+    <li><label for="ex1">QTY:</label> <input id="qty"class="form-control" id="ex1" type="number" value="{{item.qty}}"><button class="btn btn-success">Update</button></li>
     <li>{{item.price | currency}}</li>
     <button ng-click="cart.deleteProduct(item.id)" class="btn btn-danger" type="button" name="delete">Remove</button>
   </ul>
@@ -25,7 +25,7 @@
           data-image="https://scontent-ord1-1.xx.fbcdn.net/v/t1.0-9/11988597_144456269230699_4346582727606847255_n.jpg?oh=7bf8ec6cac786e58e4e04c142313ccef&oe=592A4E55"
           data-name="muhifa.com"
           data-description="Send Lots of love"
-          data-amount="{{cart.total * 100 | currency}}">
+          data-amount="{{cart.total * 100}}">
     Checkout
   </button>
 
