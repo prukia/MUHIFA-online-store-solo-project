@@ -23,6 +23,8 @@ router.get("/", function(req, res) {
     }
   });
 });
+
+//to get viscose scarves
 router.get("/viscose", function(req, res) {
 
   pool.connect(function(err, client, done) {
@@ -45,6 +47,36 @@ router.get("/viscose", function(req, res) {
     }
   });
 });
+
+//search button by name, color, and style
+
+router.get('/search', function (req, res, next) {
+
+  pool.connect(function (err, client, done) {
+    if (err) {
+      console.log('Error connecting to the DB', err);
+      res.sendStatus(500);
+      done();
+      return;
+    }
+
+    client.query('SELECT * FROM products ' +
+    'WHERE name ILIKE $1;', [req.query.q], function (err, result) {
+      done();
+      if (err) {
+        console.log('Error querying the DB', err);
+        res.sendStatus(500);
+        return;
+      }
+
+      console.log('Got rows from the DB:', result.rows);
+      res.send(result.rows);
+    });
+
+  });
+});
+
+
 router.post('/', function(req, res){
   pool.connect(function(err, client, done){
     console.log(req.body);

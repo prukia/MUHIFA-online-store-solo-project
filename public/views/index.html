@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="muhifaApp">
+<html>
 <head>
   <meta charset="utf-8">
   <title>MUHIFA Online Store</title>
@@ -33,7 +33,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <base href="/" />
 </head>
-<body>
+<body ng-app="muhifaApp">
   <!-- <a id="pay" href="#">Dolla dolla bill y'all</a>
 
 <script>
@@ -131,12 +131,10 @@
           <!-- <input type="text" class="form-control" placeholder="Search"> -->
         <!-- </div> -->
       </form>
-        <div id="rightLinks" ng-controller="CartController as cart">
-          <div class="search row">
-          <div class="nine columns">
-            <input class="u-max-full-width" type="text" placeholder="Find a treat" id="search" name="query" />
-          </div>
-          <button class="btn btn-info" type="button" name="cart">  <span class="glyphicon glyphicon-search"></span></button>
+        <div id="rightLinks" ng-controller="HomeController as home">
+
+          <input ng-model="home.input"  class="u-max-full-width" type="text" placeholder="search" id="search" name="query" />
+          <button ng-click="home.search(home.input)" class="btn btn-info" type="button" name="cart">  <span class="glyphicon glyphicon-search"></span></button>
           <a href="/login"><button class="btn btn-primary" type="button" name="account">Account</button></a>
           <a href="/profile"><button class="btn btn-info" type="button" name="account">Profile</button></a>
           <button ng-click = "home.logout()" class="btn btn-danger" type="button" name="button">Log Out</button>
