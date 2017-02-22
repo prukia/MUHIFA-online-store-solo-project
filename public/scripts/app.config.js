@@ -19,6 +19,9 @@ angular.module('muhifaApp').config(function($routeProvider, $locationProvider) {
   }).when('/scarves',{
     templateUrl: 'views/scarves.html',
     controller: 'ScarvesController as scar'
+  }).when('/viscose',{
+    templateUrl: 'views/viscose.html',
+    controller: 'ViscoseController as vis'
   }).otherwise({
     templateUrl: 'views/home.html',
     controller: 'HomeController as home'

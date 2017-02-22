@@ -16,6 +16,7 @@
   <script src="scripts/profile.controller.js" charset="utf-8"></script>
   <script src="scripts/cart.controller.js" charset="utf-8"></script>
   <script src="scripts/scarves.controller.js" charset="utf-8"></script>
+  <script src="scripts/viscose.controller.js" charset="utf-8"></script>
   <script src="scripts/auth.service.js" charset="utf-8"></script>
   <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
 <!-- <script src="https://checkout.stripe.com/checkout.js"></script> -->
@@ -98,7 +99,7 @@
           <a class="dropdown-toggle" data-toggle="dropdown" href="/scarves"> Scarves
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Viscoe</a></li>
+            <li><a href="/viscose">Viscose</a></li>
             <li><a href="#">Jersey</a></li>
             <li><a href="#">Ombre</a></li>
             <li><a href="#">Embroidered</a></li>
@@ -131,6 +132,10 @@
         <!-- </div> -->
       </form>
         <div id="rightLinks" ng-controller="CartController as cart">
+          <div class="search row">
+          <div class="nine columns">
+            <input class="u-max-full-width" type="text" placeholder="Find a treat" id="search" name="query" />
+          </div>
           <button class="btn btn-info" type="button" name="cart">  <span class="glyphicon glyphicon-search"></span></button>
           <a href="/login"><button class="btn btn-primary" type="button" name="account">Account</button></a>
           <a href="/profile"><button class="btn btn-info" type="button" name="account">Profile</button></a>

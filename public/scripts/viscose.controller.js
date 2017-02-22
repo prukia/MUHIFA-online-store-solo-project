@@ -1,17 +1,17 @@
-angular.module('muhifaApp').controller('ScarvesController', function ($http, $location){
-console.log('ScarvesController is loaded');
+angular.module('muhifaApp').controller('ViscoseController', function ($http, $location){
+console.log('ViscoseController is loaded');
 var ctrl= this;
 
 
-ctrl.getScarves = function() {
-    $http.get('/scarf').then(function(response) {
-     ctrl.scarves = response.data;
-     console.log('This is the product data: ',response.data);
+ctrl.getViscose = function() {
+    $http.get('/scarf/viscose').then(function(response) {
+     ctrl.viscose = response.data;
+     console.log('This is the viscose data: ',response.data);
    }).catch(function(err) {
      console.log('error getting response from the products :', err);
    });
- }; // end getScarves function
-ctrl.getScarves();
+ }; // end getViscose function
+ctrl.getViscose();
 
 ctrl.postScarves = function (data){
   $http.post('/scarf', data).then(function(response){
@@ -23,5 +23,8 @@ ctrl.postScarves = function (data){
   });
 
 };
+
+
+
 
 });

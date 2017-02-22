@@ -1,0 +1,20 @@
+<h3>All Viscose Scarves: ({{vis.viscose.length}})</h3>
+
+<div id="scarves">
+
+
+  <div id="scarf" ng-repeat="scarf in vis.viscose">
+    <p><img ng-src="{{scarf.image_url}}" alt="Viscose Scarve" /></p>
+    <p>{{scarf.name}} {{scarf.color}}</p>
+    <p>{{scarf.price | currency}}</p>
+    <button ng-click="vis.postScarves(scarf)" class="btn btn-success" type="button" name="add">Add to Cart</button>
+  </div>
+
+
+
+
+
+
+
+
+</div>

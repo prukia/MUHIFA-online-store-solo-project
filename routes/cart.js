@@ -19,7 +19,7 @@ router.get("/", function(req, res) {
           console.log("Error querying DB", err);
           res.sendStatus(500);
         } else {
-          console.log("Got info from DB", result.rows);
+          console.log("Got products from cart's DB", result.rows);
           res.send(result.rows)
 
         }
