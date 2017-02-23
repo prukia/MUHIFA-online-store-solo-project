@@ -61,7 +61,7 @@ router.get('/search', function (req, res, next) {
     }
 
     client.query('SELECT * FROM products ' +
-    'WHERE name ILIKE $1;', [req.query.q], function (err, result) {
+    'WHERE name ILIKE $1 OR color ILIKE $1 OR material ILIKE $1 OR type ILIKE $1;', [req.query.q], function (err, result) {
       done();
       if (err) {
         console.log('Error querying the DB', err);

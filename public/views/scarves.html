@@ -6,7 +6,7 @@
 
 
   <div id="scarf" ng-repeat="scarf in scar.scarves">
-    <p><img ng-src="{{scarf.image_url}}" alt="Pink Blush" /></p>
+    <p><img ng-src="{{scarf.image_url}}" alt="scarves" /></p>
     <p>{{scarf.name}} {{scarf.color}}</p>
     <p>{{scarf.price | currency}}</p>
     <button ng-click="scar.postScarves(scarf)" class="btn btn-success" type="button" name="add">Add to Cart</button>
