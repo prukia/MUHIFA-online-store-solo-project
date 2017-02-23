@@ -2,6 +2,8 @@ angular.module('muhifaApp').service('AuthService', function ($http, $location){
 
 console.log('AuthService is loaded');
 
+var uniqueId = 0;
+
 this.checkLoginStatus = function (){
     console.log('Checking login status');
   return $http.get('/loginStatus').then(function (res){
@@ -19,12 +21,21 @@ this.checkLoginStatus = function (){
 this.getProfileInfo = function (){
   console.log('Getting user profile');
   return $http.get('/person').then(function (res){
+    console.log('this is the user id', res.data[0].id);
     console.log('got response from the DB', res);
+    uniqueId = res.data[0].id;
+    console.log(uniqueId);
     return res.data;
   }).catch(function(err){
     console.log("error getting info from DB", err);
   });
-}
+};
+
+this.uniqueId = function (){
+
+  return uniqueId;
+
+};
 
 
 });

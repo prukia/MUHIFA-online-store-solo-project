@@ -1,4 +1,4 @@
-angular.module('muhifaApp').controller('ScarvesController', function ($http, $location){
+angular.module('muhifaApp').controller('ScarvesController', function ($http,AuthService){
 console.log('ScarvesController is loaded');
 var ctrl= this;
 
@@ -14,6 +14,8 @@ ctrl.getScarves = function() {
 ctrl.getScarves();
 
 ctrl.postScarves = function (data){
+  data.user_id = AuthService.uniqueId();
+  console.log('this is the users id shopping', data.user_id);
   $http.post('/scarf', data).then(function(response){
     console.log("Successfully posted to cart", response);
 

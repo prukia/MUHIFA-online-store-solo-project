@@ -10,7 +10,7 @@ console.log(req.user.id);
       done();
     } else {
 
-      client.query("SELECT username, first_name, last_name, street, city, state, zip FROM users WHERE id=$1;",
+      client.query("SELECT id, username, first_name, last_name, street, city, state, zip FROM users WHERE id=$1;",
       [req.user.id],
       function(err, result) {
         done();
