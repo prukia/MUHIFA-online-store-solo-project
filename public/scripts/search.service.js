@@ -26,7 +26,18 @@ this.sKey = function (){
   return sKey;
 
 };
+this.postSearchResults = function (data){
+  console.log(data);
+  return $http.post('/scarf', data).then(function(response){
+      console.log("Successfully posted to cart", response);
 
+
+    }).catch(function(err){
+      console.log('error posting response from the carts', err);
+    });
+
+
+};
 
 
 });

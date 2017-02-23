@@ -3,6 +3,7 @@ console.log('HomeController is loaded');
 
 var ctrl= this;
 ctrl.results = [];
+ctrl.postResults = [];
 
 this.logout = function() {
   console.log('is this working');
@@ -21,7 +22,7 @@ this.logout = function() {
    SearchService.getSearchResults(key).then(function(response){
      ctrl.results = response;
      console.log(ctrl.results);
-    
+
    });
  };
   ctrl.results =  SearchService.sKey();
@@ -34,5 +35,15 @@ this.logout = function() {
  //   console.log('Error searching database');
  // });
 // ctrl.search();
+
+ctrl.postSearchResults = function (data){
+
+
+  SearchService.postSearchResults(data).then(function (){
+
+    console.log('Your item posted to the cart', data);
+
+  });
+};
 
 });
