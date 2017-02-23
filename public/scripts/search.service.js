@@ -18,6 +18,8 @@ this.getSearchResults = function (key){
         $location.path('/search');
         //reference the array inside the object
         sKey.results = response.data;
+        //set key to reference it on search.html
+        sKey.key = key;
         return response.data;
      }).catch(function(err){
        console.log(err);

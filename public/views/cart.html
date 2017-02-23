@@ -5,7 +5,8 @@
     <li>Name: {{item.name}} </li>
     <li>Color: {{item.color}}</li>
     <li>Description: {{item.type}} {{item.description}} {{item.material}}</li>
-    <li><label for="ex1">QTY:</label> <input id="qty"class="form-control" id="ex1" type="number" value="{{item.qty}}"><button class="btn btn-success">Update</button></li>
+    <li><label for="ex1">QTY:</label> <input id="qty" class="form-control" type="number" ng-model="item.qty" value="{{item.qty}}">
+    <button ng-click="cart.updateProduct(item)" class="btn btn-success">Update</button></li>
     <li>{{item.price | currency}}</li>
     <button ng-click="cart.deleteProduct(item.id)" class="btn btn-danger" type="button" name="delete">Remove</button>
   </ul>
@@ -19,7 +20,9 @@
     <li>shipping: $4.99</li>
     <li id="total">Total:{{cart.total | currency}}</li>
   </ul>
-<!-- ng-click="cart.doCheckout(token)" -->
+
+
+
   <button  class="btn btn-success" stripe-checkout="cart.doCheckout"
           data-key="pk_test_xvujit22lAuFFZRdR6p6oMpP"
           data-image="https://scontent-ord1-1.xx.fbcdn.net/v/t1.0-9/11988597_144456269230699_4346582727606847255_n.jpg?oh=7bf8ec6cac786e58e4e04c142313ccef&oe=592A4E55"

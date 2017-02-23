@@ -40,12 +40,24 @@ console.log('This product is deleted', response);
   });
   ctrl.getCartScarves();
 };
-// ctrl.total = cartScarves.price.sum();
-// console.log(ctrl.total);
+
+//update qty function
+
+ctrl.updateProduct = function (object){
+  // console.log('this is an object', object);
+    console.log('this is an object', object.qty);
+  $http.put('/carts/' + object.id, object).then(function(response){
+    console.log('The quantity of this product is updated', response);
+  }).catch(function(err){
+    console.log('error updating response from the cart', err);
+  });
+  ctrl.getCartScarves();
+};
 
 
 
 
+//stripe function for checkout
 ctrl.doCheckout = function (token){
   console.log(token);
   $http.post('/charge', {

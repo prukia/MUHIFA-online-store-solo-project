@@ -1,4 +1,4 @@
-angular.module('muhifaApp').controller('NavController', function (SearchService, $location){
+angular.module('muhifaApp').controller('NavController', function (SearchService,CartService, $location){
 console.log('NavController is loaded');
 
 //created nav controller so home controller and cart controller doesn't load twice
@@ -7,6 +7,7 @@ var ctrl= this;
 //ctrl equals object inside of service
 ctrl.results = SearchService.sKey;
 ctrl.postResults = [];
+ctrl.cartScarves = [];
 
 ctrl.getSearchResults = function (key){
   console.log('loading search results');
@@ -18,6 +19,23 @@ ctrl.getSearchResults = function (key){
     // ctrl.results =  SearchService.sKey();
   });
 };
+//to get cart count
+ctrl.getCartCount = function (){
+
+
+  CartService.getCartCount().then(function (response){
+    console.log(response);
+    ctrl.cartScarves = response;
+    console.log(ctrl.cartScarves);
+
+  });
+};
+ctrl.getCartCount();
+
+
+
+
+
  // ctrl.results =  SearchService.sKey();
 
 

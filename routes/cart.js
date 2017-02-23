@@ -54,6 +54,7 @@ router.delete('/:id', function(req, res){
 
 //Updating qty amount in cart
 router.put('/:id', function (req,res){
+    console.log('this is the qty', req.body);
   pool.connect(function (err, client, done){
     if(err){
       console.log('Error connecting to DB', err);
@@ -65,7 +66,7 @@ router.put('/:id', function (req,res){
       function(err, result){
         done();
         if(err){
-          console.log('Erroe updating qty in cart', err);
+          console.log('Error updating qty in cart', err);
           res.sendStatus(500);
         }else{
           res.send(result.rows);
