@@ -2,11 +2,14 @@ img{
 	height: 350px;
 	width: 350px;
 }
-#shopName{
+h1 {
 	font-family: 'Cinzel', serif;
 	text-align: center;
 	color: purple;
 	font-size: 80px;
+
+}
+#shopName{
 
 }
 #rightLinks{
@@ -44,6 +47,9 @@ h2{
 	font-family: 'Lobster', cursive;
 	text-decoration: underline;
 	color: purple;
+}
+h4 {
+	font-size: 20px;
 }
 footer {
     /* just for demo */

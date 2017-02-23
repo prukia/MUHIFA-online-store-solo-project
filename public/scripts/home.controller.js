@@ -5,6 +5,7 @@ var ctrl= this;
 ctrl.results = [];
 ctrl.postResults = [];
 
+
 this.logout = function() {
   console.log('is this working');
    $http.delete('/login').then(function(){
@@ -15,27 +16,19 @@ this.logout = function() {
    });
  };
 
-
- ctrl.getSearchResults = function (key){
-   console.log('loading search results');
-
-   SearchService.getSearchResults(key).then(function(response){
-     ctrl.results = response;
-     console.log(ctrl.results);
-
-   });
- };
+//
+//  ctrl.getSearchResults = function (key){
+//    console.log('loading search results');
+//
+//    SearchService.getSearchResults(key).then(function(response){
+//      ctrl.results = response;
+//      console.log(ctrl.results);
+//      ctrl.results =  SearchService.sKey();
+//    });
+//  };
   ctrl.results =  SearchService.sKey();
-// console.log('this is the input', ctrl.input);
- // $http.get('scarf/search/?q=' + key).then(function (response){
- //   ctrl.getResults = response.data;
- //   console.log('This is the search data: ',response.data);
- //    $location.path('/search');
- // }).catch(function(err){
- //   console.log('Error searching database');
- // });
-// ctrl.search();
-
+//
+//need post function because this searchpage is run by the home ctrl
 ctrl.postSearchResults = function (data){
 
 
@@ -47,3 +40,16 @@ ctrl.postSearchResults = function (data){
 };
 
 });
+
+
+
+
+// console.log('this is the input', ctrl.input);
+ // $http.get('scarf/search/?q=' + key).then(function (response){
+ //   ctrl.getResults = response.data;
+ //   console.log('This is the search data: ',response.data);
+ //    $location.path('/search');
+ // }).catch(function(err){
+ //   console.log('Error searching database');
+ // });
+// ctrl.search();

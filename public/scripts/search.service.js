@@ -2,7 +2,10 @@ angular.module('muhifaApp').service('SearchService', function ($http, $location)
 
 console.log('SearchService is loaded');
 
-var sKey = [];
+//create object instead of array for results to show up inside of search pg
+var sKey = {
+    results: []
+};
 
 
 this.getSearchResults = function (key){
@@ -13,7 +16,8 @@ this.getSearchResults = function (key){
        console.log('This is the search data: ',response.data);
 
         $location.path('/search');
-        sKey = response.data;
+        //reference the array inside the object
+        sKey.results = response.data;
         return response.data;
      }).catch(function(err){
        console.log(err);
@@ -23,6 +27,7 @@ this.getSearchResults = function (key){
 };
 
 this.sKey = function (){
+  console.log(sKey);
   return sKey;
 
 };

@@ -1,13 +1,13 @@
 <h2>SEARCH:</h2>
 
 <p>
-  Your search for "{{home.input}}" returned ({{home.results.length}}) results
+  Your search for "{{home.input.key}}" returned ({{home.results.results.length}}) results
 </p>
 
 <div id="scarves">
 
 
-  <div id="scarf" ng-repeat="scarf in home.results track by $index">
+  <div id="scarf" ng-repeat="scarf in home.results.results track by $index">
     <p><img ng-src="{{scarf.image_url}}" alt="search results" /></p>
     <p>{{scarf.name}} {{scarf.color}}</p>
     <p>{{scarf.price | currency}}</p>
