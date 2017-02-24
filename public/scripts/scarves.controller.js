@@ -1,4 +1,4 @@
-angular.module('muhifaApp').controller('ScarvesController', function ($http,AuthService){
+angular.module('muhifaApp').controller('ScarvesController', function ($http,AuthService, CartService){
 console.log('ScarvesController is loaded');
 var ctrl= this;
 
@@ -13,16 +13,31 @@ ctrl.getScarves = function() {
  }; // end getScarves function
 ctrl.getScarves();
 
+
 ctrl.postScarves = function (data){
-  data.user_id = AuthService.uniqueId();
-  console.log('this is the users id shopping', data.user_id);
+var loggedinStatus = null;
+  // data.user_id = AuthService.uniqueId();
+  // console.log('this is the users id shopping', data.user_id);
+
+  $http.get('/loginStatus').then(function(response){
+    loggedinStatus = response.data;
+    console.log('this is the status', response);
+  });
+if ( loggedinStatus == true ){
   $http.post('/scarf', data).then(function(response){
     console.log("Successfully posted to cart", response);
-
+      // data.user_id = AuthService.uniqueId();
 
   }).catch(function(err){
     console.log('error posting response from the carts', err);
+
   });
+
+}else{
+  CartService.addToCartTracker(data);
+  // console.log('is this working', CartService.addToCartTracker(data));
+};
+
 
 };
 

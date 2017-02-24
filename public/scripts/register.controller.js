@@ -5,6 +5,7 @@ var ctrl = this;
 
 ctrl.register = function() {
   console.log('creating a new user');
+    swal("Welcome", "Continue to shop with MUHIFA", "success");
   $http.post('/register', {
     username: ctrl.username,
     password: ctrl.password,
@@ -16,6 +17,7 @@ ctrl.register = function() {
     zip: ctrl.zip
   }).then(function(response){
     console.log(response);
+
     $location.path('/home');
   }, function(error) {
     console.log('error registering new user', error);

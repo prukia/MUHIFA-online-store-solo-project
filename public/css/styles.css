@@ -40,27 +40,32 @@ li{
 	list-style: none;
 }
 #cartData{
-	display: list-item;
+	display: inline-block;
+	padding-bottom: 30px;
 
 }
-
+.navbar{
+	/*background-color: #381632;*/
+}
 h2, h3{
 	font-family: 'Lobster', cursive;
 	text-decoration: underline;
 	color: purple;
 }
 h4 {
-	font-size: 40px;
+	font-size: 30px;
 	font-family: 'Lobster', cursive;
 	color: #8a52a3;
 }
 #orderSummary{
-border: 3px solid purple;
+border: 3px solid white;
 height: 50%;
 width: 50%;
+float: right;
 }
 #prices{
 	font-size: 20px;
+	font-weight: bold;
 	text-align: center;
 
 }
@@ -76,6 +81,7 @@ footer {
     bottom: 0;
     height: 90px;
     width: 100%;
+
 }
 
 #customerService, #aboutUs, #stayConnected {
@@ -84,6 +90,7 @@ footer {
 	font-family: 'Cinzel', serif;
 	color: purple;
 	font-weight: bold;
+	font-size: 20px;
 }
 
 

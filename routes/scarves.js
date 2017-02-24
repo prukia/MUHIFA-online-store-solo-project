@@ -127,7 +127,7 @@ router.get('/search', function (req, res, next) {
 
 router.post('/', function(req, res){
   pool.connect(function(err, client, done){
-    console.log(req.body);
+    console.log('this is the users id', req.user.id);
     if (err){
       console.log('Error connecting to DB', err);
       res.sendStatus(500);
@@ -136,7 +136,7 @@ router.post('/', function(req, res){
 
       client.query('INSERT INTO cart (name, color, description, type, material, image_url, price, qty, user_id) VALUES ($1, $2, $3, $4, $5, $6, $7,$8 , $9) RETURNING *;',
       //has to be the same as object names inside of gif-service
-      [req.body.name, req.body.color, req.body.description, req.body.type, req.body.material, req.body.image_url, req.body.price, 1, req.body.user_id],
+      [req.body.name, req.body.color, req.body.description, req.body.type, req.body.material, req.body.image_url, req.body.price, 1, req.user.id],
       function(err, result){
         //waiting for database to get information back
         done();

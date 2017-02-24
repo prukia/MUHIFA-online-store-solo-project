@@ -1,4 +1,4 @@
-angular.module('muhifaApp').controller('NavController', function (SearchService,CartService, $location){
+angular.module('muhifaApp').controller('NavController', function ($http, SearchService,CartService, $location){
 console.log('NavController is loaded');
 
 //created nav controller so home controller and cart controller doesn't load twice
@@ -8,6 +8,17 @@ var ctrl= this;
 ctrl.results = SearchService.sKey;
 ctrl.postResults = [];
 ctrl.cartScarves = [];
+
+this.logout = function() {
+  console.log('is this working');
+   $http.delete('/login').then(function(){
+     console.log('Successfully logged out!');
+     swal("Logged Out!", "See you soon!", "success")
+     $location.path('/');
+   }).catch(function(err){
+     console.log('Error logging out');
+   });
+ };
 
 ctrl.getSearchResults = function (key){
   console.log('loading search results');

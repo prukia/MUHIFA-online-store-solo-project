@@ -1,4 +1,4 @@
-angular.module('muhifaApp').controller('CartController', function ($http, $location){
+angular.module('muhifaApp').controller('CartController', function ($http, $location, CartService){
 console.log('CartController is loaded');
 
 
@@ -30,11 +30,15 @@ ctrl.getCartScarves = function() {
  }; // end getCohorts function
 ctrl.getCartScarves();
 
+CartService.getCartTracker();
+console.log('this is cart array', CartService.getCartTracker());
+
 
 ctrl.deleteProduct = function(id){
   console.log(id);
   $http.delete('/carts/' + id).then(function(response){
 console.log('This product is deleted', response);
+swal("It's Gone!", "Your product is now deleted from your cart!", "success")
   }).catch(function(err){
     console.log('error deleting response from the cart', err);
   });
@@ -48,10 +52,11 @@ ctrl.updateProduct = function (object){
     console.log('this is an object', object.qty);
   $http.put('/carts/' + object.id, object).then(function(response){
     console.log('The quantity of this product is updated', response);
+    ctrl.getCartScarves();
   }).catch(function(err){
     console.log('error updating response from the cart', err);
   });
-  ctrl.getCartScarves();
+
 };
 
 
@@ -65,10 +70,12 @@ ctrl.doCheckout = function (token){
     data: token.id,
     amount: ctrl.total * 100
   }).then(function (response){
-    alert("Thank you for your payment!")
+    // alert("Thank you for your payment!")
+    swal("Successful Payment!", "Thank you for your payment!", "success")
     // alert("Got Stripe token: " + response);
   }).catch(function(err){
     console.log('error posting to stripe', err);
+    swal("Payment not processed!", "Looks like your payment didn't post", "error")
   });
 };
 });

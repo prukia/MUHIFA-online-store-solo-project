@@ -16,6 +16,7 @@ function LoginController($http, $location) {
       $location.path('/home');
     }, function(error) {
       console.log('error loggin in', error);
+      swal("Oops!", "Something went wrong on the page, possibly wrong password?", "error");
     });
   };
 }

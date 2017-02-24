@@ -3,6 +3,7 @@ angular.module('muhifaApp').service('CartService', function ($http, $location){
 console.log('CartService is loaded');
 
 var ctrl = this;
+var cartTracker = [];
 
 
 this.getCartCount = function (){
@@ -33,9 +34,13 @@ this.getCartCount = function (){
 
 };
 
+//array to track cart data when user is not logged in
+this.addToCartTracker = function (item){
+  cartTracker.push(item);
 
-
-
-
+};
+this.getCartTracker = function () {
+  return cartTracker;
+};
 
 });
