@@ -22,6 +22,12 @@ angular.module('muhifaApp').config(function($routeProvider, $locationProvider) {
   }).when('/viscose',{
     templateUrl: 'views/viscose.html',
     controller: 'ViscoseController as vis'
+  }).when('/embroidered',{
+    templateUrl: 'views/embroidered.html',
+    controller: 'EmbroideredController as em'
+  }).when('/ombre',{
+    templateUrl: 'views/ombre.html',
+    controller: 'OmbreController as om'
   }).when('/search',{
     templateUrl: 'views/search.html',
     controller: 'HomeController as home'

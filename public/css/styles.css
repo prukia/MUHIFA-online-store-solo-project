@@ -40,16 +40,29 @@ li{
 	list-style: none;
 }
 #cartData{
-	text-align: center;
-	display: inline-block;
+	display: list-item;
+
 }
-h2{
+
+h2, h3{
 	font-family: 'Lobster', cursive;
 	text-decoration: underline;
 	color: purple;
 }
 h4 {
+	font-size: 40px;
+	font-family: 'Lobster', cursive;
+	color: #8a52a3;
+}
+#orderSummary{
+border: 3px solid purple;
+height: 50%;
+width: 50%;
+}
+#prices{
 	font-size: 20px;
+	text-align: center;
+
 }
 footer {
     /* just for demo */

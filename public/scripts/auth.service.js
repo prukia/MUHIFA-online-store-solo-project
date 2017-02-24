@@ -30,7 +30,7 @@ this.getProfileInfo = function (){
     console.log("error getting info from DB", err);
   });
 };
-
+//to get user_id that is logged in at the time.
 this.uniqueId = function (){
 
   return uniqueId;

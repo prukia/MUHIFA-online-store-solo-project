@@ -48,6 +48,54 @@ router.get("/viscose", function(req, res) {
   });
 });
 
+//to get embroidered scarves
+router.get("/embroidered", function(req, res) {
+
+  pool.connect(function(err, client, done) {
+    if (err) {
+      console.log("Error connecting to DB", err);
+      res.sendStatus(500);
+      done();
+    } else {
+
+      client.query("SELECT * FROM products WHERE material='embroidered';", function(err, result) {
+        done();
+        if (err) {
+          console.log("Error querying DB", err);
+          res.sendStatus(500);
+        } else {
+          console.log("Got info from embroidered scarves from DB", result.rows);
+          res.send(result.rows);
+        }
+      });
+    }
+  });
+});
+
+//to get ombre scarves
+router.get("/ombre", function(req, res) {
+
+  pool.connect(function(err, client, done) {
+    if (err) {
+      console.log("Error connecting to DB", err);
+      res.sendStatus(500);
+      done();
+    } else {
+
+      client.query("SELECT * FROM products WHERE material='ombre';", function(err, result) {
+        done();
+        if (err) {
+          console.log("Error querying DB", err);
+          res.sendStatus(500);
+        } else {
+          console.log("Got info from ombre scarves from DB", result.rows);
+          res.send(result.rows);
+        }
+      });
+    }
+  });
+});
+
 //search button by name, color, and style
 
 router.get('/search', function (req, res, next) {

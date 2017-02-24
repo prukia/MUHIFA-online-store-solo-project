@@ -1,7 +1,7 @@
 <h2>Shopping Bag ({{cart.cartScarves.length}})</h2>
 <div id="cartData" ng-repeat="item in cart.cartScarves track by $index">
   <p><img ng-src="{{item.image_url}}" alt="" /></p>
-  <ul>
+  <ul id="productInfo">
     <li>Name: {{item.name}} </li>
     <li>Color: {{item.color}}</li>
     <li>Description: {{item.type}} {{item.description}} {{item.material}}</li>
@@ -14,16 +14,16 @@
 
 <div id="orderSummary">
   <h4>Order Summary:</h4>
-  <ul>
-    <li>Subtotal:{{cart.subtotal | currency}}</li>
-    <li>sales tax: </li>
+  <ul id="prices">
+    <li>Subtotal: {{cart.subtotal | currency}}</li>
+    <!-- <li>sales tax: </li> -->
     <li>shipping: $4.99</li>
-    <li id="total">Total:{{cart.total | currency}}</li>
+    <li id="total">Total: {{cart.total | currency}}</li>
   </ul>
 
 
 
-  <button  class="btn btn-success" stripe-checkout="cart.doCheckout"
+  <button  class="btn btn-success btn-lg btn-block" stripe-checkout="cart.doCheckout"
           data-key="pk_test_xvujit22lAuFFZRdR6p6oMpP"
           data-image="https://scontent-ord1-1.xx.fbcdn.net/v/t1.0-9/11988597_144456269230699_4346582727606847255_n.jpg?oh=7bf8ec6cac786e58e4e04c142313ccef&oe=592A4E55"
           data-name="muhifa.com"

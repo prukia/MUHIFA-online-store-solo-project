@@ -1,0 +1,20 @@
+<h3>All Ombre Scarves: ({{om.ombre.length}})</h3>
+
+<div id="scarves">
+
+
+  <div id="scarf" ng-repeat="scarf in om.ombre">
+    <p><img ng-src="{{scarf.image_url}}" alt="Ombre Scarve" /></p>
+    <p>{{scarf.name}} {{scarf.color}}</p>
+    <p>{{scarf.price | currency}}</p>
+    <button ng-click="om.postScarves(scarf)" class="btn btn-success" type="button" name="add">Add to Cart</button>
+  </div>
+
+
+
+
+
+
+
+
+</div>
