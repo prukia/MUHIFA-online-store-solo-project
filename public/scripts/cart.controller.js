@@ -73,6 +73,8 @@ ctrl.doCheckout = function (token){
     // alert("Thank you for your payment!")
     swal("Successful Payment!", "Thank you for your payment!", "success")
     // alert("Got Stripe token: " + response);
+
+    ctrl.cartScarves = [];
   }).catch(function(err){
     console.log('error posting to stripe', err);
     swal("Payment not processed!", "Looks like your payment didn't post", "error")
