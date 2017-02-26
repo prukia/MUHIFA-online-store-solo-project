@@ -23,7 +23,7 @@ var loggedinStatus = null;
     loggedinStatus = response.data;
     console.log('this is the status', response);
   });
-if ( loggedinStatus == true ){
+if ( loggedinStatus === true ){
   $http.post('/scarf', data).then(function(response){
     console.log("Successfully posted to cart", response);
       // data.user_id = AuthService.uniqueId();
