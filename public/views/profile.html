@@ -1,11 +1,11 @@
-<h2>Profile</h2>
+<h2>Profile:</h2>
 <!-- {{profile.username}}'s  -->
 
 
-<div ng-repeat="cust in profile.user">
-  <p>Hello: {{cust.first_name}}</p>
+<div id="profileInfo" ng-repeat="cust in profile.user">
+  <p class="hello">Hello {{cust.first_name}}</p>
 <p>Username:  {{cust.username}}</p>
-<h4>Address: </h4>
+<h4 class="address" >Address: </h4>
 <p>{{cust.street}}</p>
 <p>{{cust.city}}, {{cust.state}} {{cust.zip}}</p>
 </div>
