@@ -1,6 +1,6 @@
 # MUHIFA Online-Store (Solo-Project)
-- *Author*: Rukia Sheikh-Mohamed
-- *Date Created*: 02/10/17
+- *Author:* Rukia Sheikh-Mohamed
+- *Date Created:* February 10th, 2017
 
 ## Description:
 MUHIFA is Ecommerce site for a small business in the Twin Cities. Previous business
@@ -20,4 +20,4 @@ user account, add, update, and delete merchandise in their cart, and purchase me
 
 #### Note:
 
-- Site is currently on beta status while business owners relaunch their new products, then when business relaunch is ready site will move to gold status.
+- Site is currently on beta status while business owners relaunch their new products, then when business relaunch is ready site will move to production status. Currently, working on admin-interface. 
